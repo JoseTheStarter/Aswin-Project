@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jordan CMFT 2 - Details</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+  </div>
+
+  <div class="background-effect"></div>
+
+  <!-- Top Bar and Navigation -->
+  <div class="top-bar">
+    <span>UNMISSABLE SHOE DEALS ▼</span>
+  </div>
+
+  <header class="main-nav">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo">
+      <nav class="nav-links">
+        <a href="index1.html">HOME</a>
+        <a href="men.html"><strong>MEN</strong></a>
+        <a href="women.html">WOMEN</a>
+        <a href="#">KIDS</a>
+        <a href="#">SPORTS & LIFESTYLE</a>
+        <a href="#">OUTLET</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="nav-actions-top">
+        <a href="#">help</a>
+        <a href="#">orders and returns</a>
+        <a href="#">sign up</a>
+        <a href="#">log in</a>
+      </div>
+      <div class="nav-actions-bottom">
+        <div class="search-box">
+          <input type="text" placeholder="Search">
+          <button><i class="search-icon">🔍</i></button>
+        </div>
+        <a href="#"><i class="icon">👤</i></a>
+        <a href="#"><i class="icon">♡</i></a>
+        <a href="#"><i class="icon">🛍️</i></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="product-detail-section">
+    <div class="product-detail-card">
+      <img src="sh.jpg" alt="Jordan CMFT 2">
+      <div class="product-info">
+        <h2>Sabretooth Z2</h2>
+        <p class="price">MRP ₹11,895.00</p>
+        <p class="description">
+            This is a basketball shoe released as part of Kevin Durant's signature line. It features a unique design inspired by the sabretooth tiger, with a distinctive colorway and pattern.
+        </p>
+        <a href="d3.html"class="buy-button">Add to Cart</a>
+    </div>
+  </section>
+
+  <script>
+    // Loading screen remove after page load
+    window.addEventListener("load", function() {
+      const loader = document.getElementById("loading-screen");
+      loader.style.display = "none";
+    });
+
+    // Background effect
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.querySelector('.background-effect').style.background = `radial-gradient(circle at ${x}% ${y}%, #1e1e2f, #111, #000)`;
+    });
+  </script>
+
+</body>
+</html>

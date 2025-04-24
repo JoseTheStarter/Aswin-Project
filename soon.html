@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feature Coming Soon</title>
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    /* Reusing previous styles for consistency */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    .coming-soon-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #ff6347;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .countdown {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff6347;
+      margin-top: 20px;
+    }
+
+    .interactive-buttons {
+      margin-top: 30px;
+    }
+
+    .interactive-buttons button {
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .interactive-buttons button:hover {
+      background-color: #e5533d;
+    }
+
+    /* Specific styling for the background effect */
+    .background-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Loading screen styles (if necessary) */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #ff6347;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen (Optional, can be removed if not needed) -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Background Effect -->
+  <div class="background-effect"></div>
+
+  <!-- Coming Soon Section -->
+  <div class="coming-soon-container">
+    <h1>Feature Coming Soon!</h1>
+    <p>We are working hard to bring this feature to you. Stay tuned and check back soon!</p>
+    
+    <div class="countdown" id="countdown">
+      Loading countdown...
+    </div>
+    
+    <div class="interactive-buttons">
+      <button onclick="subscribe()">Notify Me!</button>
+      <button onclick="redirectToHome()">Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer (Optional - You can customize this to match your expected launch time)
+    function startCountdown() {
+      const launchDate = new Date("May 15, 2025 00:00:00").getTime();  // Set launch date here
+      const countdownElement = document.getElementById("countdown");
+
+      setInterval(function() {
+        const now = new Date().getTime();
+        const timeRemaining = launchDate - now;
+
+        if (timeRemaining <= 0) {
+          countdownElement.innerHTML = "The feature is now available!";
+        } else {
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+          
+          countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+      }, 1000);
+    }
+
+    // Call countdown on page load
+    window.onload = startCountdown;
+
+    // Notify Me Button Function
+    function subscribe() {
+      alert("Thank you for subscribing! We'll notify you when the feature is live.");
+    }
+
+    // Back to Home Button Function
+    function redirectToHome() {
+      window.location.href = "index1.html";  // Redirect back to your home page
+    }
+
+    // Loading screen remove after page load
+    window.addEventListener("load", function() {
+      const loader = document.getElementById("loading-screen");
+      loader.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

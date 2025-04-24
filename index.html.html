@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shoe Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Interactive Background -->
+  <div class="background-effect"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>UNMISSABLE SHOE DEALS ▼</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="main-nav">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <nav class="nav-links">
+        <a href="#">SHOES</a>
+        <a href="men.html">MEN</a>
+        <a href="soon.html">WOMEN</a>
+        <a href="soon.html">KIDS</a>
+        <a href="soon.html"><strong>SPORTS & LIFESTYLE</strong></a>
+        <a href="soon.html">OUTLET</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="nav-actions-top">
+        <a href="#">help</a>
+        <a href="#">orders and returns</a>
+        <a href="#">sign up</a>
+        <a href="#">log in</a>
+      </div>
+      <div class="nav-actions-bottom">
+        <div class="search-box">
+          <input type="text" placeholder="Search" />
+          <button><i class="search-icon">🔍</i></button>
+        </div>
+        <a href="#"><i class="icon">👤</i></a>
+        <a href="#"><i class="icon">♡</i></a>
+        <a href="#"><i class="icon">🛍️</i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spacer to push content below fixed header -->
+  <div class="spacer"></div>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>Shoe Store</h1>
+    <p>
+      Welcome to your one-stop online destination for purchasing high-quality, stylish, and comfortable shoes.
+      Our website is designed to offer a seamless shopping experience, with a wide variety of footwear options for men, women, and kids. Whether you're looking for casual sneakers, formal shoes, sports footwear, or trendy sandals, Shoe Hub has something for everyone.
+    </p>
+    <p>
+      With an easy-to-navigate interface, secure payment options, and fast delivery services, we make shoe shopping convenient and enjoyable. At Shoe Hub, we’re committed to providing the perfect pair for every step you take.
+    </p>
+    <a href="men.html" class="button">Click here to purchase</a>
+  </main>
+
+  <!-- JavaScript for interactive background -->
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.querySelector('.background-effect').style.background = `radial-gradient(circle at ${x}% ${y}%, #1e1e2f, #111, #000)`;
+    });
+  </script>
+
+</body>
+</html>
